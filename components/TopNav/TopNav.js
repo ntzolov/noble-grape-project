@@ -10,18 +10,14 @@ export default function TopNav() {
             Noble Grape
           </Link>
         </li>
-        <li>
-          <Link href='#'>ITEMS</Link>
-        </li>
-        <li>
-          <Link href='#'>CATEGORIES</Link>
-        </li>
-        <li>
-          <Link href='#'>SEARCH</Link>
-        </li>
-        <li>
-          <Link href='#'>ABOUT</Link>
-        </li>
+        <div className={s['top-nav--auth']}>
+          <li>
+            <Link href='/login'>LOGIN</Link>
+          </li>
+          <li>
+            <Link href='/register'>REGISTER</Link>
+          </li>
+        </div>
       </ul>
     </nav>
   );
