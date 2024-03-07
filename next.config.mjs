@@ -1,4 +1,4 @@
-const config = require('./config');
+import { config } from './config.js';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

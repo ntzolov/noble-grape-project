@@ -8,7 +8,7 @@ const userSchema = mongoose.Schema(
       required: [true, 'Name is required'],
       trim: true,
       minLength: [1, 'Name length must be from 1 to 20 characters long!'],
-      maxLength: [2, 'Name length must be from 1 to 20 characters long!'],
+      maxLength: [20, 'Name length must be from 1 to 20 characters long!'],
     },
     email: {
       type: String,
