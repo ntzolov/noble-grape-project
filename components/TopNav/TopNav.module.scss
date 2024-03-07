@@ -1,30 +1,27 @@
+@import '@/scss/_mixins';
+
 .top-nav {
   display: flex;
   justify-content: space-between;
-  font-size: 1.4rem;
   list-style: none;
   background-color: #0c0c1e;
 
   li {
-    flex: 1 1 20%;
+    @include nav-link;
+  }
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      color: #f3e3e2;
-      text-decoration: none;
+  &--auth {
+    display: flex;
 
-      &:hover {
-        background-color: #1b2e3c;
-      }
+    li {
+      flex: 1 1 20%;
+
+      @include nav-link;
     }
   }
 }
 
 .logo-text {
   font-family: 'Corinthiago';
-  font-size: 2.4rem;
+  font-size: 2.4rem !important;
 }
