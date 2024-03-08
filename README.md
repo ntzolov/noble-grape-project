@@ -1,1 +1,1 @@
-<p style="text-align: center; color: red;">Text_content</p>
+<p align=center>Loading...</p>
