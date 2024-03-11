@@ -1,13 +1,15 @@
 @import '@/scss/_mixins';
+@import '@/scss/_variables';
 
 .top-nav {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  background-color: #0c0c1e;
+  background-color: $color-brand-primary;
 
   li {
     @include nav-link;
+    font-family: 'Josefin Sans';
   }
 
   &--auth {
@@ -17,6 +19,7 @@
       flex: 1 1 20%;
 
       @include nav-link;
+      font-family: 'Josefin Sans';
     }
   }
 }

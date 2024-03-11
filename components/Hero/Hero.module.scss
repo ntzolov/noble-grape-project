@@ -1,0 +1,81 @@
+@import '@/scss/_variables';
+
+.hero {
+  font-family: 'Lato';
+  height: 40rem;
+  background-image: url('./cellar.avif'), linear-gradient(rgba(75, 0, 0, 0.7), rgba(75, 0, 0, 0.4));
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: $color-text-primary;
+
+    &--left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Merriweather';
+      flex: 1 1 60%;
+      padding: 2rem 4rem;
+      font-size: 2.2rem;
+
+      .two-columns {
+        column-count: 2;
+        background: rgba(#000000, 0.3);
+        padding: 1rem;
+        box-shadow: 5px 5px 0px $color-text-primary;
+      }
+
+      p {
+        line-height: 1.5;
+        margin-bottom: 5rem;
+        // column-count: 2;
+      }
+
+      .cta {
+        display: flex;
+        flex-direction: column;
+
+        p {
+          display: inline-block;
+          font-size: 2.4rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn--cta {
+          color: white;
+          background-color: $color-brand-secondary;
+          align-self: center;
+
+          &:hover {
+            box-shadow: 0 0 0.3rem white inset;
+          }
+        }
+      }
+    }
+
+    &--right {
+      display: flex;
+      align-items: center;
+      flex: 1 1 40%;
+      padding: 2rem 4rem;
+      font-weight: 700;
+      line-height: 1;
+
+      h1 {
+        font-size: 5.6rem;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.strong {
+  font-weight: 700;
+}
