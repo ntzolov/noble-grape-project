@@ -1,3 +1,5 @@
+@import '@/scss/_variables';
+
 @mixin nav-link {
   a {
     display: flex;
@@ -6,12 +8,13 @@
     width: 100%;
     height: 100%;
     font-size: 1.4rem;
-    color: #f3e3e2;
+    // font-weight: 600;
+    color: $color-text-primary;
     text-decoration: none;
     padding: 0 2rem;
 
     &:hover {
-      background-color: #1b2e3c;
+      background-color: $color-brand-secondary;
     }
   }
 }
