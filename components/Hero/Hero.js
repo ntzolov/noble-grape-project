@@ -14,7 +14,7 @@ export default function Hero() {
             the perfect bottle to savor and share.
           </p>
           <div className={styles['cta']}>
-            <p className={styles['strong']}>Explore our collection today.</p>
+            {/* <p className={styles['strong']}>Explore our collection today.</p> */}
             <a href='#' className={`${'btn'} ${styles['btn--cta']}`}>
               Browse Wines Now
             </a>
