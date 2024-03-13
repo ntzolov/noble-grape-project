@@ -10,7 +10,7 @@ export default function Register() {
       <div className={styles['container']}>
         <div className={styles['signup-content']}>
           <div className={styles['signup-form']}>
-            <h2 className={styles['form-title']}>Sign up</h2>
+            <h2 className={styles['form-title']}>Sign Up</h2>
             <form method='POST' className={styles['register-form']} id='register-form'>
               <div className={styles['form-group']}>
                 <label htmlFor='name'>
