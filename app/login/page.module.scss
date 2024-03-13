@@ -1,3 +1,126 @@
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+@import '@/scss/variables';
+@import '@/scss/mixins';
+
+.signin {
+  align-self: center;
+
+  .signin-content {
+    display: flex;
+    // padding: 7.5rem 0;
+  }
+
+  .signin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 2;
+    align-items: center;
+    margin: 0 9rem;
+    width: 50%;
+    overflow: hidden;
+
+    .form-title {
+      color: $color-text-black;
+      margin-bottom: 3rem;
+      font-size: 4rem;
+      font-weight: 900;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .form-button {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-group {
+        position: relative;
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+
+        .form-submit {
+          width: 40%;
+          background: $color-brand-tertiary;
+          color: $color-text-primary;
+          border: 1px solid $color-brand-tertiary-shade-30;
+          outline: 1px solid $color-brand-tertiary-shade-60;
+          padding: 1rem 0;
+          margin-top: 2.5rem;
+          margin-bottom: 4rem;
+          cursor: pointer;
+          transition: all 0.1s ease-out;
+
+          &:hover {
+            background-color: $color-text-primary;
+            color: $color-brand-tertiary;
+          }
+        }
+      }
+
+      .signin-image-link {
+        position: relative;
+        display: block;
+        font-size: 1.8rem;
+        color: $color-text-black;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid $color-text-black;
+
+        &:hover::after {
+          content: '\279F';
+          position: absolute;
+          right: -3rem;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+
+  .signin-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    overflow: hidden;
+
+    img {
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  input {
+    display: block;
+    font-size: 1.8rem;
+    width: 100%;
+    border: none;
+    padding: 0.6rem 3rem;
+    border-bottom: 1px solid $color-grey-light;
+    box-sizing: border-box;
+    &:focus {
+      border-bottom: 1px solid $color-text-black;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-text-black;
+  }
+
+  label svg {
+    height: 2rem;
+  }
 }
