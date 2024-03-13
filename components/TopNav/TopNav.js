@@ -3,19 +3,25 @@ import Link from 'next/link';
 
 export default function TopNav() {
   return (
-    <nav>
+    <nav className={styles['navigation']}>
       <ul className={styles['top-nav']}>
         <li>
-          <Link href='/' className={styles['logo-text']}>
-            Noble Grape
-          </Link>
+          <div className={styles['link']}>
+            <Link href='/' className={styles['logo-text']}>
+              Noble Grape
+            </Link>
+          </div>
         </li>
         <div className={styles['top-nav--auth']}>
           <li>
-            <Link href='/login'>LOGIN</Link>
+            <div className={styles['link']}>
+              <Link href='/login'>LOGIN</Link>
+            </div>
           </li>
           <li>
-            <Link href='/register'>REGISTER</Link>
+            <div className={styles['link']}>
+              <Link href='/register'>REGISTER</Link>
+            </div>
           </li>
         </div>
       </ul>
