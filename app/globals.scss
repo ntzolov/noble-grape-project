@@ -20,10 +20,20 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Inter';
 }
 
 body {
   min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato';
 }
 
 img,
@@ -35,15 +45,25 @@ svg {
 }
 
 .main-container {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 120rem;
+  min-height: 100dvh;
 }
 
 .btn {
-  font-family: 'Josefin Sans';
+  font-family: 'Raleway';
   text-transform: uppercase;
   font-weight: 600;
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin: auto 0;
 }
