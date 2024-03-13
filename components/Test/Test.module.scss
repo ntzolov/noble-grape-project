@@ -1,0 +1,15 @@
+.test {
+  // background-color: green;
+  position: relative;
+  font-size: 6rem;
+
+  height: 50rem;
+
+  .test2 {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
