@@ -1,0 +1,9 @@
+@import '../../scss/variables';
+
+.footer {
+  background-color: $color-brand-primary;
+  color: $color-text-primary;
+  height: 15rem;
+  font-size: 3rem;
+  overflow: hidden;
+}
