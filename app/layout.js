@@ -1,4 +1,6 @@
 import TopNav from '@/components/TopNav/TopNav';
+import Footer from '@/components/Footer/Footer';
+
 import './globals.scss';
 
 export const metadata = {
@@ -13,6 +15,7 @@ export default function RootLayout({ children }) {
         <div className='main-container'>
           <TopNav />
           <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
