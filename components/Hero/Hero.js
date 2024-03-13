@@ -8,7 +8,7 @@ export default function Hero() {
           <p className={styles['two-columns']}>
             <strong>
               <span className={styles['strong']}>Welcome to a world where wine transcends beverage.</span>
-            </strong>{' '}
+            </strong>
             We are your destination for discerning palates, curating a collection of exquisite wines that tell a story. Each
             bottle represents a meticulous craft, a legacy of tradition, and a unique expression of terroir. Let us help you find
             the perfect bottle to savor and share.
