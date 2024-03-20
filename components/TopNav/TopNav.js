@@ -1,7 +1,12 @@
+'use client';
+
 import styles from './TopNav.module.scss';
 import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function TopNav() {
+  const { data, status, loading } = useSession();
+
   return (
     <nav className={styles['navigation']}>
       <ul className={styles['top-nav']}>
