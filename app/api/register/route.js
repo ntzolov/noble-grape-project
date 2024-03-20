@@ -18,8 +18,7 @@ export async function POST(req) {
     });
 
     return NextResponse.json({ success: 'Registration Successful!' }, { status: 201 });
-  } catch (err) {
-    console.log(err);
-    return NextResponse.json({ err: err.message }, { status: 500 });
+  } catch (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
