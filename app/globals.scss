@@ -1,4 +1,5 @@
 // Font sizes used in pixels: 8, 12, 14, 16, 18, 20, 22, 24, 32, 40, 48, 56, 64, 72, 80
+@import '@/scss/variables';
 
 @font-face {
   font-family: 'Corinthiago';
@@ -66,4 +67,13 @@ main {
   flex-direction: column;
   flex: 1 1;
   margin: auto 0;
+}
+
+.toaster {
+  margin-top: 7rem;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+  background-color: $color-text-primary;
+  color: $color-brand-tertiary;
+  border: 2px solid $color-brand-tertiary;
 }

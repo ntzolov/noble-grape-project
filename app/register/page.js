@@ -1,17 +1,74 @@
+'use client';
+
 import styles from './page.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 import registerImage from '@/public/images/register-image.avif';
-import Link from 'next/link';
 
 export default function Register() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rePass, setRePass] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  async function submitHandler(e) {
+    e.preventDefault();
+
+    try {
+      if ((!name, !email, !password, !rePass)) {
+        toast.error('All fields are required!');
+        return;
+      }
+
+      if (password !== rePass) {
+        toast.error("Password doesn't match!");
+        return;
+      }
+
+      if (Number(password.length) < 6 || Number(rePass.length) < 6) {
+        toast.error('Password should be at least 6 characters long!');
+        return;
+      }
+
+      setLoading(true);
+
+      const response = await fetch(`${process.env.API}/api/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        toast.error(data.error);
+        setLoading(false);
+      } else {
+        toast.success(data.success);
+        router.push('/login');
+      }
+    } catch (error) {
+      setLoading(false);
+      toast.error(error);
+    }
+  }
+
   return (
     <section className={styles['signup']}>
       <div className={styles['container']}>
         <div className={styles['signup-content']}>
           <div className={styles['signup-form']}>
             <h2 className={styles['form-title']}>Sign Up</h2>
-            <form method='POST' className={styles['register-form']} id='register-form'>
+            <form onSubmit={submitHandler} className={styles['register-form']} id='register-form'>
               <div className={styles['form-group']}>
                 <label htmlFor='name'>
                   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' className='w-6 h-6'>
@@ -22,7 +79,7 @@ export default function Register() {
                     />
                   </svg>
                 </label>
-                <input type='text' name='name' id='register-name' placeholder='Your Name' />
+                <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Your Name' />
               </div>
               <div className={styles['form-group']}>
                 <label htmlFor='email'>
@@ -31,7 +88,7 @@ export default function Register() {
                     <path d='M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z' />
                   </svg>
                 </label>
-                <input type='email' name='email' id='register-email' placeholder='Your Email' />
+                <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Your Email' />
               </div>
               <div className={styles['form-group']}>
                 <label htmlFor='password'>
@@ -43,7 +100,7 @@ export default function Register() {
                     />
                   </svg>
                 </label>
-                <input type='password' name='password' id='register-password' placeholder='Password' />
+                <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
               </div>
               <div className={styles['form-group']}>
                 <label htmlFor='rePass'>
@@ -55,15 +112,19 @@ export default function Register() {
                     />
                   </svg>
                 </label>
-                <input type='password' name='rePass' id='register-rePass' placeholder='Repeat your password' />
+                <input
+                  type='password'
+                  value={rePass}
+                  onChange={(e) => setRePass(e.target.value)}
+                  placeholder='Repeat your password'
+                />
               </div>
               <div className={`${styles['form-group']} ${styles['form-button']}`}>
                 <input
                   type='submit'
-                  name='signup'
-                  id='register'
+                  disabled={loading}
+                  value={loading ? 'Loading...' : 'Register'}
                   className={`${styles['form-submit']} ${'btn'}`}
-                  value='Register'
                 />
                 <Link href={'/login'} className={styles['signup-image-link']}>
                   I am already member
