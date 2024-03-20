@@ -24,6 +24,23 @@
       }
     }
 
+    &--profile {
+      display: flex;
+      // padding-right: 2rem;
+
+      li {
+        flex: 1 1 20%;
+        font-family: 'Raleway';
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        @include nav-link;
+        a {
+          border-bottom: 1px solid $color-text-primary;
+        }
+      }
+    }
+
     &--auth {
       display: flex;
       padding-right: 2rem;
