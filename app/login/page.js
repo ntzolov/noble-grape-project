@@ -5,10 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 
 import loginImage from '@/public/images/login-image.avif';
+import googleSignInButton from '@/public/images/google-signin-button.svg';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -16,6 +17,8 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl' || '/');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -43,11 +46,17 @@ export default function Login() {
         setLoading(false);
       } else {
         toast.success('Successfully logged in!');
-        router.push('/');
+        router.push(callbackUrl);
       }
     } catch (error) {
       toast.error(error);
     }
+  }
+
+  async function googleSubmitHandler(e) {
+    e.preventDefault();
+
+    await signIn('google', { callbackUrl: '/' });
   }
 
   return (
@@ -85,6 +94,9 @@ export default function Login() {
                   value={loading ? 'Loading...' : 'Login'}
                   className={`${styles['form-submit']} ${'btn'}`}
                 />
+                <button className={styles['google-button']} onClick={googleSubmitHandler}>
+                  <Image src={googleSignInButton} width={181} height={40} alt='google sign in button'></Image>
+                </button>
                 <Link href={'/register'} className={styles['signin-image-link']}>
                   Create an account
                 </Link>
