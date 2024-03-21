@@ -1,4 +1,5 @@
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
 import dbConnect from './dbConnect';
 import User from '@/models/User';
 import bcrypt from 'bcrypt';
@@ -13,6 +14,10 @@ export const authOptions = {
     password: { label: 'Password', type: 'password' },
   },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
     CredentialsProvider({
       async authorize(credentials, req) {
         dbConnect();
