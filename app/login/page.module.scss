@@ -48,6 +48,21 @@
           margin-bottom: 0px;
         }
 
+        .google-button {
+          border: none;
+          margin: 0;
+          padding: 0;
+          width: auto;
+          overflow: visible;
+          background: transparent;
+          cursor: pointer;
+          margin-bottom: 2rem;
+
+          &:hover {
+            filter: brightness(80%);
+          }
+        }
+
         .form-submit {
           width: 40%;
           background: $color-brand-tertiary;
