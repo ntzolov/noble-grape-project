@@ -37,6 +37,14 @@ export default function TopNav() {
               </li>
             </div>
           </>
+        ) : status === 'loading' ? (
+          <div className={styles['top-nav--auth']}>
+            <li>
+              <div className={styles['link']}>
+                <a>Loading...</a>
+              </div>
+            </li>
+          </div>
         ) : (
           <div className={styles['top-nav--auth']}>
             <li>
