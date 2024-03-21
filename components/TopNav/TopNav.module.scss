@@ -21,6 +21,11 @@
         padding: 0 1rem;
 
         @include nav-link;
+
+        .loader-nav {
+          display: flex;
+          justify-content: center;
+        }
       }
     }
 
