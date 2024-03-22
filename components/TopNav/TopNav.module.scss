@@ -26,22 +26,9 @@
           display: flex;
           justify-content: center;
         }
-      }
-    }
 
-    &--profile {
-      display: flex;
-
-      li {
-        flex: 1 1 20%;
-        font-family: 'Lato';
-        font-size: 1.6rem;
-        font-weight: 500;
-
-        @include nav-link;
-        a {
-          border-left: 2px inset $color-text-primary;
-          border-right: 2px inset $color-text-primary;
+        .user-icon {
+          font-size: 1.8rem;
         }
       }
     }
@@ -55,6 +42,7 @@
         font-family: 'Raleway';
         font-size: 1.4rem;
         font-weight: 500;
+
         @include nav-link;
       }
     }
