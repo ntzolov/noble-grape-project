@@ -17,8 +17,8 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl' || '/');
+  // const searchParams = useSearchParams();
+  // const callbackUrl = searchParams.get('callbackUrl' || '/');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -46,7 +46,7 @@ export default function Login() {
         setLoading(false);
       } else {
         toast.success('Successfully logged in!');
-        router.push(callbackUrl);
+        router.push('/');
       }
     } catch (error) {
       toast.error(error);
