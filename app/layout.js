@@ -1,4 +1,4 @@
-import TopNav from '@/components/TopNav/TopNav';
+import TopNav from '@/components/navigation/TopNav/TopNav';
 import Footer from '@/components/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
 import $SessionProvider from '@/context/sessionProvider';
