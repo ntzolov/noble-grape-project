@@ -4,9 +4,6 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <meta
-          http-equiv='Content-Security-Policy'
-          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com"></meta>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
         <link
