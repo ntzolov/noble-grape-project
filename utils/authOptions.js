@@ -56,7 +56,7 @@ export const authOptions = {
 
       return true;
     },
-    jwt: async ({ token, user }) => {
+    jwt: async ({ token }) => {
       const userByEmail = await User.findOne({ email: token.email });
       userByEmail.password = undefined;
       userByEmail.resetCode = undefined;
