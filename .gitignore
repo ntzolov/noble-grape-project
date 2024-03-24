@@ -2,6 +2,7 @@
 
 # environments module
 config.mjs
+config.js
 
 # dotenv environment variables file
 .env
