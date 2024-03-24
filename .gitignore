@@ -3,6 +3,10 @@
 # config/env
 next.config.mjs
 
+# dotenv environment variables file
+.env
+.env.test
+
 # dependencies
 /node_modules
 /.pnp
