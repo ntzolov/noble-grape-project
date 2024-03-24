@@ -3,9 +3,6 @@
 # enf files
 .env
 
-# config/env
-next.config.mjs
-
 # dependencies
 /node_modules
 /.pnp
