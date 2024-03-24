@@ -8,6 +8,8 @@ export default function TopNav() {
   const { data, status } = useSession();
   console.log({ data, status });
   console.log(process.env.NEXT_PUBLIC_TEST);
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET);
 
   return (
     <nav className={styles['navigation']}>
