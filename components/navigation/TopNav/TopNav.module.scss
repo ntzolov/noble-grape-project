@@ -18,7 +18,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        padding: 0 1rem;
 
         @include nav-link;
 
@@ -28,14 +27,15 @@
         }
 
         .user-icon {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
+          margin-right: 0.3rem;
         }
       }
     }
 
     &--auth {
       display: flex;
-      padding-right: 2rem;
+      padding-right: 1.5rem;
 
       li {
         flex: 1 1 20%;

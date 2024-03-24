@@ -29,7 +29,7 @@ export default function TopNav() {
             </li>
             <li>
               <div className={styles['link']}>
-                <Link href='/dashboard/user'>
+                <Link href={`dashboard/${data?.user?.role === 'admin' ? 'admin' : 'user'}`}>
                   <p className={styles['user-icon']}>&#9998;</p>
                   <p>{data?.user?.name}</p>
                 </Link>
