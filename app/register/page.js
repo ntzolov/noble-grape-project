@@ -39,7 +39,10 @@ export default function Register() {
 
       setLoading(true);
 
-      const response = await fetch(`${process.env.API}/api/register`, {
+      const apiRoute =
+        process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_PRODUCTION : process.env.NEXT_PUBLIC_API_LOCAL;
+
+      const response = await fetch(`${apiRoute}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
