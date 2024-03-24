@@ -5,5 +5,5 @@ export default async function dbConnect() {
     return;
   }
 
-  await mongoose.connect(process.env.NEXT_PUBLIC_DB_URI);
+  await mongoose.connect(process.env.DB_URI);
 }
