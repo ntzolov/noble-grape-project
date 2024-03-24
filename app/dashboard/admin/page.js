@@ -1,4 +1,3 @@
-import AdminNav from '@/components/navigation/AdminNav/AdminNav';
 import styles from './page.module.scss';
 
 export default function AdminPage() {

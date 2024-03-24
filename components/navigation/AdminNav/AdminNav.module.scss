@@ -2,12 +2,14 @@
 @import '@/scss/_variables';
 
 .navigation {
-  height: 7rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  border-top: 2px solid $color-text-primary;
 
-  .top-nav {
+  .admin-nav {
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
     background-color: $color-brand-primary;
 
@@ -18,29 +20,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-
-        @include nav-link;
-
-        .loader-nav {
-          display: flex;
-          justify-content: center;
-        }
-
-        .user-icon {
-          font-size: 1.8rem;
-        }
-      }
-    }
-
-    &--auth {
-      display: flex;
-      padding-right: 0.5rem;
-
-      li {
-        flex: 1 1 20%;
-        font-family: 'Raleway';
-        font-size: 1.4rem;
-        font-weight: 500;
 
         @include nav-link;
       }
