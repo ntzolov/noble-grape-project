@@ -1,18 +1,4 @@
-// import config from './config.mjs';
-
 /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   env: {
-//     DB_URI: 'mongodb+srv://ntzolov:zZYLb8iwd7rDyaac@movie-characters.vtrawke.mongodb.net/nobleGrape?retryWrites=true&w=majority',
-//     API: process.env.NODE_ENV === 'production' ? 'http://localhost:3000' : 'http://localhost:3000', // have to change production link when deployed
-//     NEXTAUTH_SECRET: 'fsaG!#g3egAgde!gDAGdagE!gE!GDGA',
-//     NEXTAUTH_URL: 'http://localhost:3000',
-//     GOOGLE_CLIENT_ID: '492827785480-pikr0ocv7j0aetu7ed0vfm65j60m3nnc.apps.googleusercontent.com',
-//     GOOGLE_CLIENT_SECRET: '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',
-//   },
-// };
-
-// export default nextConfig;
 
 const nextConfig = {
   async headers() {

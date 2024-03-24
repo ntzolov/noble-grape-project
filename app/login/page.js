@@ -41,8 +41,6 @@ export default function Login() {
         password,
       });
 
-      console.log(result);
-
       if (result?.error) {
         toast.error(result?.error);
         setLoading(false);
