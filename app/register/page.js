@@ -42,6 +42,8 @@ export default function Register() {
       const apiRoute =
         process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_PRODUCTION : process.env.NEXT_PUBLIC_API_LOCAL;
 
+      console.log(apiRoute);
+
       const response = await fetch(`${apiRoute}/register`, {
         method: 'POST',
         headers: {
@@ -49,6 +51,8 @@ export default function Register() {
         },
         body: JSON.stringify({ name, email, password }),
       });
+
+      console.log(response);
 
       const data = await response.json();
 
