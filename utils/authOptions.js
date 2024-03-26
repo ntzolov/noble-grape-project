@@ -73,3 +73,5 @@ export const authOptions = {
     signIn: '/login',
   },
 };
+
+// ...
