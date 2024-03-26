@@ -68,7 +68,7 @@ export const authOptions = {
       return session;
     },
   },
-  secret: 'fsaG!#g3egAgde!gDAGdagE!gE!GDGA',
+  secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
   pages: {
     signIn: '/login',
   },
