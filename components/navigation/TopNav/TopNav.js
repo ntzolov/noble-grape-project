@@ -7,6 +7,7 @@ import { useSession, signOut } from 'next-auth/react';
 export default function TopNav() {
   const { data, status } = useSession();
   console.log({ data, status });
+  // console.log(process.env.NEXT_PUBLIC_NEXTAUTH_SECRET);
 
   return (
     <nav className={styles['navigation']}>
