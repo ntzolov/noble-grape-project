@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "sass": "^1.71.1",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "eslint": "^8",
