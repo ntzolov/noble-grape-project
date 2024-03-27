@@ -7,8 +7,7 @@ import { useCategory } from '@/context/category';
 
 export default function TopNav() {
   const { data, status } = useSession();
-  const categories = useCategory();
-  console.log(categories.name);
+  console.log('TEST');
   console.log({ data, status });
 
   return (
