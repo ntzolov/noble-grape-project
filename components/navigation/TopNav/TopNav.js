@@ -7,7 +7,6 @@ import { useCategory } from '@/context/category';
 
 export default function TopNav() {
   const { data, status } = useSession();
-  console.log('TEST');
   console.log({ data, status });
 
   return (
