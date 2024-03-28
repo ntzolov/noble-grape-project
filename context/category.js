@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 import toast from 'react-hot-toast';
 
 export const CategoryContext = createContext();
@@ -8,9 +8,13 @@ export const CategoryContext = createContext();
 export default function CategoryProvider({ children }) {
   const [name, setName] = useState('');
   const [categories, setCategories] = useState([]);
-  const [updatingCategory, setUpdatingCategory] = useState(null);
+  const [updatingCategory, setUpdatingCategory] = useState({
+    name: 'asd',
+  });
   const apiRoute =
-    process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_API_PRODUCTION : process.env.NEXT_PUBLIC_API_LOCAL;
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_API_PRODUCTION
+      : process.env.NEXT_PUBLIC_API_LOCAL;
 
   async function createCategory() {
     try {
@@ -23,7 +27,7 @@ export default function CategoryProvider({ children }) {
       const data = await response.json();
 
       if (!response.ok) {
-        toast.error(data.error);
+        toast.error(data);
       } else {
         toast.success('Category created!');
         setName('');
@@ -41,7 +45,7 @@ export default function CategoryProvider({ children }) {
       const data = response.json();
 
       if (!response.ok) {
-        toast.error(data.error);
+        toast.error(data);
       } else {
         setCategories(data);
       }
@@ -61,7 +65,7 @@ export default function CategoryProvider({ children }) {
     const data = await response.json();
 
     if (!response.ok) {
-      toast.error(data.error);
+      toast.error(data);
     } else {
       toast.success('Category updated!');
       setCategories(
@@ -87,7 +91,7 @@ export default function CategoryProvider({ children }) {
       const data = await response.json();
 
       if (!response.ok) {
-        toast.error(data.error);
+        toast.error(data);
       } else {
         toast.success('Category deleted!');
         setCategories(categories.filter((category) => category._id !== updatingCategory._id));
@@ -118,6 +122,4 @@ export default function CategoryProvider({ children }) {
   );
 }
 
-export function useCategory() {
-  useContext(CategoryContext);
-}
+export const useCategory = () => useContext(CategoryContext);
