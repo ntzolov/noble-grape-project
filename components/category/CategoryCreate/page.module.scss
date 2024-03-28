@@ -1,0 +1,90 @@
+@import '@/scss/variables';
+
+.category-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  p {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  input {
+    // background-color: grey;
+    margin-top: 3rem;
+    width: 40ch;
+    border: none;
+    border-bottom: 3px solid $color-grey-lightest;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid black;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .btn--primary {
+    font-size: 1.6rem;
+    // width: 10%;
+    background: $color-success-green;
+    color: $color-text-primary;
+    border: 2px solid black;
+    // outline: 1px solid $color-brand-tertiary-shade-60;
+    padding: 0.5rem 1rem;
+    // margin-top: 2.5rem;
+    // margin-bottom: 4rem;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: $color-text-primary;
+      color: $color-brand-tertiary;
+    }
+  }
+
+  .btn--delete {
+    font-size: 1.6rem;
+    // width: 10%;
+    background: $color-danger-red;
+    color: $color-text-primary;
+    border: 2px solid black;
+    // outline: 1px solid $color-brand-tertiary-shade-60;
+    padding: 0.5rem 1rem;
+    // margin-top: 2.5rem;
+    // margin-bottom: 4rem;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: $color-text-primary;
+      color: $color-brand-tertiary;
+    }
+  }
+
+  .btn--clear {
+    font-size: 1.6rem;
+    // width: 10%;
+    background: $color-neutral-blue;
+    color: $color-text-primary;
+    border: 2px solid black;
+    // outline: 1px solid $color-brand-tertiary-shade-60;
+    padding: 0.5rem 1rem;
+    // margin-top: 2.5rem;
+    // margin-bottom: 4rem;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: $color-text-primary;
+      color: $color-brand-tertiary;
+    }
+  }
+}

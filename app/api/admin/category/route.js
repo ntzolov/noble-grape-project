@@ -9,14 +9,14 @@ export async function POST(req) {
 
     const body = await req.json();
     const { name } = body;
+    const isExist = await Category.findOne({ name });
 
-    const isExist = Category.findOne({ name });
     if (isExist) {
       throw new Error('This category already exist!');
     }
 
     const category = await Category.create({ name, slug: slugify(name) });
-    NextResponse.json(category, { status: 201 });
+    return NextResponse.json(category, { status: 201 });
   } catch (error) {
     return NextResponse.json(error.message, { status: 500 });
   }
