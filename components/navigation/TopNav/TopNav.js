@@ -3,7 +3,6 @@
 import styles from './TopNav.module.scss';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
-import { useCategory } from '@/context/category';
 
 export default function TopNav() {
   const { data, status } = useSession();
