@@ -5,8 +5,6 @@ import dbConnect from './dbConnect';
 import User from '@/models/User';
 import bcrypt from 'bcrypt';
 
-console.log(process.env.NEXT_PUBLIC_NEXTAUTH_SECRET);
-
 export const authOptions = {
   session: {
     strategy: 'jwt',
