@@ -7,15 +7,15 @@ export default function AdminNav() {
       <ul className={styles['admin-nav']}>
         <li>
           <div className={styles['link']}>
-            <Link href={'/'} className='pointer'>
-              LOGOUT
+            <Link href={'/dashboard/admin'} className='pointer'>
+              Admin
             </Link>
           </div>
         </li>
         <li>
           <div className={styles['link']}>
-            <Link href={'/'} className='pointer'>
-              LOGOUT
+            <Link href={'/dashboard/admin/category'} className='pointer'>
+              Create Category
             </Link>
           </div>
         </li>
